@@ -22,18 +22,18 @@ int main()
 
     if (fstream file(file_path, ios::in); file.is_open()) {
         string line;
-        string word;
-        vector<string> row;
+        string column;
+        vector<string> rows;
 
         while (getline(file, line)) {
-            row.clear();
+            rows.clear();
 
             stringstream line_stream(line);
 
-            while (getline(line_stream, word, delimiter)) {
-                row.push_back(word);
+            while (getline(line_stream, column, delimiter)) {
+                rows.push_back(column);
             }
-            content.push_back(row);
+            content.push_back(rows);
         }
     } else {
         cout << "Could not open the file\n";
